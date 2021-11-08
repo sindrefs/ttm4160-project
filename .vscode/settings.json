@@ -1,0 +1,4 @@
+{
+  "python.autoComplete.extraPaths": ["./code"],
+  "python.analysis.extraPaths": ["./code"]
+}
