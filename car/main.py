@@ -8,6 +8,8 @@ def handleCommand(command):
         PerformContinousMove()
     elif (command['command'] == "stop"):
         PerformStop()
+    elif (command['command'] == "backwards"):
+        PerformContinousMove(direction="BACKWARDS")
 
 
 if __name__ == '__main__':

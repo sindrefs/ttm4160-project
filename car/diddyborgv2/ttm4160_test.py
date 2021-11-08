@@ -55,10 +55,14 @@ def PerformStop():
     TB.MotorsOff()
 
 
-def PerformContinousMove():
-    offset = 0.99
-    TB.SetMotor1(maxPower)
-    TB.SetMotor2(-(maxPower * offset))
+def PerformContinousMove(direction="FORWARDS"):
+    directionPolarity = 1
+    if (direction == "BACKWARDS"):
+        directionPolarity = -1
+
+    offset = 0.995
+    TB.SetMotor1(directionPolarity * maxPower)
+    TB.SetMotor2(directionPolarity * -(maxPower * offset))
 
 
 def PerformMove(driveLeft, driveRight, numSeconds):
