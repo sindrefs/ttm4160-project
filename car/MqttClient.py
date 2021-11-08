@@ -18,7 +18,7 @@ class MqttClient:
         client.subscribe(CAR_CONTROLS_TOPIC)
 
     def on_message(self, client, userdata, message):
-        commandReceived = json.loads(message.payload)
+        commandReceived = json.loads(str(message.payload))
         self.dispatch(commandReceived)
 
     def startLoop(self):
