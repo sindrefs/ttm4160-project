@@ -31,7 +31,7 @@ TB.SetLedShowBattery(False)
 
 # Movement settings (worked out from our DiddyBorg on a smooth surface)
 # Number of seconds needed to move about 1 meter
-timeForward1m = 1
+timeForward1m = 2.7
 # Number of seconds needed to make a full left / right spin
 timeSpin360 = 4.8
 # True to run the motion tests, False to run the normal sequence
