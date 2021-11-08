@@ -56,7 +56,7 @@ def PerformStop():
 
 
 def PerformContinousMove():
-    offset = 0.95
+    offset = 1.05
     TB.SetMotor1(maxPower)
     TB.SetMotor2(-(maxPower * offset))
 
