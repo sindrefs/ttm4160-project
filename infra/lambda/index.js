@@ -41,7 +41,11 @@ exports.main = async function (event, context) {
             await client.publish("ttm4160/carcontrols", JSON.stringify(JSON.parse(event.body)))
             return {
                 statusCode: 200,
-                headers: {},
+                headers: {
+                    "Access-Control-Allow-Headers": "Content-Type",
+                    "Access-Control-Allow-Origin": "*",
+                    "Access-Control-Allow-Methods": "OPTIONS,POST,GET"
+                },
                 body: JSON.stringify({ result: "ok" })
             }
 
