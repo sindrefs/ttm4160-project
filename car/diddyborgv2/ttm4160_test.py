@@ -94,7 +94,7 @@ def PerformDrive(meters):
     # Calculate the required time delay
     numSeconds = meters * timeForward1m
     # Perform the motion
-    PerformMove(driveLeft, driveRight, numSeconds)
+    PerformMove(driveLeft, -driveRight, numSeconds)
 
 
 # Run test mode if required
