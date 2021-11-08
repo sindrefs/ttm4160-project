@@ -1,4 +1,6 @@
 *.js
+!lambda/index.js
+lambda/package*
 !jest.config.js
 *.d.ts
 node_modules
