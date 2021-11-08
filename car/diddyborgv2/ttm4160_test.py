@@ -54,7 +54,7 @@ else:
 def PerformMove(driveLeft, driveRight, numSeconds):
     # Set the motors running
     TB.SetMotor1(driveLeft * maxPower)
-    TB.SetMotor2(driveRight * maxPower)
+    TB.SetMotor2(-(driveRight * maxPower))
     # Wait for the time
     time.sleep(numSeconds)
     # Turn the motors off
@@ -94,7 +94,7 @@ def PerformDrive(meters):
     # Calculate the required time delay
     numSeconds = meters * timeForward1m
     # Perform the motion
-    PerformMove(driveLeft, -driveRight, numSeconds)
+    PerformMove(driveLeft, driveRight, numSeconds)
 
 
 # Run test mode if required
