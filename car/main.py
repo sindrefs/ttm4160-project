@@ -1,11 +1,11 @@
 from MqttClient import MqttClient
-from diddyborgv2.ttm4160_test import PerformDrive, PerformStop
+from diddyborgv2.ttm4160_test import PerformContinousMove, PerformStop
 
 
 def handleCommand(command):
     if (command['command'] == "go"):
         print(command)
-        PerformDrive(1)
+        PerformContinousMove()
     elif (command['command'] == "stop"):
         PerformStop()
 

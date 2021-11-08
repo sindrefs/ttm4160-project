@@ -55,6 +55,12 @@ def PerformStop():
     TB.MotorsOff()
 
 
+def PerformContinousMove(left, right):
+    offset = 0.95
+    TB.SetMotor1(left * maxPower)
+    TB.SetMotor2(-(right * maxPower * offset))
+
+
 def PerformMove(driveLeft, driveRight, numSeconds):
     # Set the motors running
     TB.SetMotor1(driveLeft * maxPower)
