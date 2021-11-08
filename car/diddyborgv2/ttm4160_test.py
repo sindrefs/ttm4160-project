@@ -4,7 +4,7 @@
 # Simple example of a motor sequence script
 
 # Import library functions we need
-import ThunderBorg3 as ThunderBorg
+from . import ThunderBorg3 as ThunderBorg
 import time
 import math
 import sys
