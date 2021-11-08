@@ -51,6 +51,10 @@ else:
 # Function to perform a general movement
 
 
+def PerformStop():
+    TB.MotorsOff()
+
+
 def PerformMove(driveLeft, driveRight, numSeconds):
     # Set the motors running
     TB.SetMotor1(driveLeft * maxPower)
