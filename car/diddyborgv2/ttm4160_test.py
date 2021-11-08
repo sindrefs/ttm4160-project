@@ -55,7 +55,7 @@ def PerformStop():
     TB.MotorsOff()
 
 
-def PerformContinousMove(direction="FORWARDS"):
+def PerformContinousMove(direction="FORWARDS", angle=0):
     directionPolarity = 1
     if (direction == "BACKWARDS"):
         directionPolarity = -1
