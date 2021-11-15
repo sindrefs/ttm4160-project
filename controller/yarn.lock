@@ -9547,13 +9547,6 @@
     "react" "^16.5.0"
     "react-dom" "^16.5.0"
 
-"react-mqtt-client@^1.0.0":
-  "integrity" "sha512-Dhv9X3Ayr/KBws8+0pxTWuXy11l/XJaSpW6sscfsLPEWMjQHEuls9sKIE/4LkdpzqABeOdR2GVYt7dUlfgU0xQ=="
-  "resolved" "https://registry.npmjs.org/react-mqtt-client/-/react-mqtt-client-1.0.0.tgz"
-  "version" "1.0.0"
-  dependencies:
-    "mqtt" "^3.0.0"
-
 "react-refresh@^0.8.3", "react-refresh@>=0.8.3 <0.10.0":
   "integrity" "sha512-X8jZHc7nCMjaCqoU+V2I0cOhNW+QMBwSUkeXnTi8IPe6zaRWfn60ZzvFDZqWPfmSJfjub7dDW1SP0jaHWLu/hg=="
   "resolved" "https://registry.npmjs.org/react-refresh/-/react-refresh-0.8.3.tgz"
