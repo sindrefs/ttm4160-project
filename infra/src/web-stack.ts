@@ -50,7 +50,7 @@ export class WebStack extends cdk.Stack {
           defaultTtl: cdk.Duration.minutes(5),
           maxTtl: cdk.Duration.minutes(20),
         }),
-        viewerProtocolPolicy: cloudFront.ViewerProtocolPolicy.REDIRECT_TO_HTTPS,
+        // viewerProtocolPolicy: cloudFront.ViewerProtocolPolicy.REDIRECT_TO_HTTPS,
       },
       errorResponses: [
         {
