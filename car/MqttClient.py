@@ -20,8 +20,8 @@ class MqttClient:
     def on_message(self, client, userdata, message):
         commandReceived = json.loads(
             str(message.payload.decode("utf-8", "ignore")))
-        self.dispatch(commandReceived)
         print(commandReceived)
+        self.dispatch(commandReceived)
 
     def startLoop(self):
         self.client.loop_forever()
