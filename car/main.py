@@ -10,7 +10,7 @@ def handleCommand(command):
         PerformStop()
     elif (command['command'] == "backwards"):
         PerformContinousMove(direction="BACKWARDS")
-    elif (command['command'] == "joystick"):
+    elif (command['command'].joystick):
         PerformContinousMove(direction="BACKWARDS")
 
 if __name__ == '__main__':
