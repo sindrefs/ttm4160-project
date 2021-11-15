@@ -1,5 +1,6 @@
 import threading
 import picamera
+import picamera.array
 import requests
 import cv2
 import time
