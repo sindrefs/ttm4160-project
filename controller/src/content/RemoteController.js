@@ -21,7 +21,7 @@ const RemoteController = () => {
       method: "POST",
       body: JSON.stringify({ joystick: event, command: "joystick" })
     })
-    .then(response => console.log(response))
+      .then(response => console.log(response))
       .catch(err => console.log(err));
   }
 
@@ -31,9 +31,10 @@ const RemoteController = () => {
       method: "POST",
       body: JSON.stringify({ joystick: event, command: "stop" })
     })
-      
+      .then(response => console.log(response))
+      .catch(err => console.log(err))
   }
-
+  
   return (
     <div>
       <Joystick size={100} throttle={200} baseColor="#232C33" stickColor="red" move={handleMove} stop={handleStop}></Joystick>
