@@ -11,7 +11,7 @@ def handleCommand(command):
     elif (command['command'] == "backwards"):
         PerformContinousMove(direction="BACKWARDS")
     elif (command['command'] == "joystick"):
-        PerformContinousMove(direction="BACKWARDS", angle)
+        PerformContinousMove(direction="BACKWARDS")
 
 if __name__ == '__main__':
     client = MqttClient(handleCommand)

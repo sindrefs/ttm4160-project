@@ -61,15 +61,16 @@ def PerformContinousMove(direction="FORWARDS", angle=0):
         directionPolarity = -1
 
     offset = 0.995
-    if angle>0: #turn right
+    if angle > 0:  # turn right
         TB.SetMotor1(directionPolarity * maxPower)
-        TB.SetMotor2(directionPolarity * -(maxPower * offset) * (1+(angle/10))
-    else if angle <0:
-        TB.SetMotor1(directionPolarity * maxPower * (1+(angle/10))
+        TB.SetMotor2(directionPolarity * -(maxPower * offset) * (1+(angle/10)))
+    elif angle < 0:
+        TB.SetMotor1(directionPolarity * maxPower * (1+(angle/10)))
         TB.SetMotor2(directionPolarity * -(maxPower * offset))
     else:
-	TB.SetMotor1(directionPolarity * maxPower)
+        TB.SetMotor1(directionPolarity * maxPower)
         TB.SetMotor2(directionPolarity * -(maxPower * offset))
+
 
 def PerformMove(driveLeft, driveRight, numSeconds):
     # Set the motors running
@@ -81,21 +82,21 @@ def PerformMove(driveLeft, driveRight, numSeconds):
     TB.MotorsOff()
 
 
-def PerformMoveAngle(driveLeft, driveRight, numSeconds, angle):
-	
-    if angle>0: #turn right
-	TB.SetMotor1(driveLeft * maxPower)
-    	TB.SetMotor2(-(driveRight * maxPower*(1+(angle/10))
-    else if angle <0:
-	TB.SetMotor1(driveLeft * maxPower*(1+(angle/10))
-    	TB.SetMotor2(-(driveRight * maxPower))
-    # Set the motors running
-    #TB.SetMotor1(driveLeft * maxPower)
-    #TB.SetMotor2(-(driveRight * maxPower))
-    # Wait for the time
-    time.sleep(numSeconds)
-    # Turn the motors off
-    TB.MotorsOff()
+# def PerformMoveAngle(driveLeft, driveRight, numSeconds, angle):
+
+#     if angle > 0:  # turn right
+#         TB.SetMotor1(driveLeft * maxPower)
+#     	TB.SetMotor2(-(driveRight * maxPower*(1+(angle/10))
+#     else if angle < 0:
+# 	TB.SetMotor1(driveLeft * maxPower*(1+(angle/10))
+#     	TB.SetMotor2(-(driveRight * maxPower))
+#     # Set the motors running
+#     # TB.SetMotor1(driveLeft * maxPower)
+#     # TB.SetMotor2(-(driveRight * maxPower))
+#     # Wait for the time
+#     time.sleep(numSeconds)
+#     # Turn the motors off
+#     TB.MotorsOff()
 
 # Function to spin an angle in degrees
 
