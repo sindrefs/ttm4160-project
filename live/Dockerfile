@@ -1,10 +1,10 @@
-FROM tiangolo/nginx-rtmp 
+FROM node
 
-RUN mkdir /data
-RUN mkdir /data/hls
+COPY package.json /app/package.json
+COPY package-lock.json /app/package-lock.json
+COPY node_modules/ /app/node_modules/
+COPY server.js /app/server.js
 
-COPY health.html /var/www/health/index.html
+CMD ["node", "app/server.js"]
 
-COPY nginx.conf /etc/nginx/nginx.conf
-
-EXPOSE 80
+EXPOSE 9000
