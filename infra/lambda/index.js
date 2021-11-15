@@ -13,7 +13,7 @@ https://docs.aws.amazon.com/lambda/latest/dg/nodejs-prog-model-handler.html
 */
 exports.main = async function (event, context) {
 
-    const client = mqtt.connect("mqtt://broker.hivemq.com", 1883);
+    const client = mqtt.connect("mqtt://test.mosquitto.org", 1883);
 
     const connectedPromise = new Promise((resolve, reject) => {
         client.on('connect', () => {

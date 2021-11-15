@@ -2,7 +2,7 @@ import paho.mqtt.client as mqtt
 import json
 
 CAR_CONTROLS_TOPIC = "ttm4160/carcontrols"
-BROKER_URL = "https://test.mosquitto.org/"
+BROKER_URL = "mqtt://test.mosquitto.org/"
 
 
 class MqttClient:
