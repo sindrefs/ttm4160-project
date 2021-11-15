@@ -3,6 +3,7 @@ from diddyborgv2.ttm4160_test import PerformContinousMove, PerformStop
 
 
 def handleCommand(command):
+    print(command['command'])
     if (command['command'] == "go"):
         print(command)
         PerformContinousMove()
@@ -12,6 +13,7 @@ def handleCommand(command):
         PerformContinousMove(direction="BACKWARDS")
     elif (command['command'].joystick):
         PerformContinousMove(direction="BACKWARDS")
+
 
 if __name__ == '__main__':
     client = MqttClient(handleCommand)
