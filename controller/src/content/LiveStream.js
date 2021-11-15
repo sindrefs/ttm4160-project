@@ -1,7 +1,7 @@
 import React from 'react'
 import useWebSocket from 'react-use-websocket'
 
-const socketUrl = "ws://localhost:9000"
+const socketUrl = "ws://ttm41-bfflo-17c606og763lz-1083556350.eu-west-1.elb.amazonaws.com"
 
 const LiveStream = () => {
     const { lastMessage: socketData } = useWebSocket(socketUrl)
