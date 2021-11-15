@@ -1,11 +1,15 @@
 from MqttClient import MqttClient
-from diddyborgv2.ttm4160_test import PerformDrive
+from diddyborgv2.ttm4160_test import PerformContinousMove, PerformStop
 
 
 def handleCommand(command):
     if (command['command'] == "go"):
         print(command)
-        PerformDrive(1)
+        PerformContinousMove()
+    elif (command['command'] == "stop"):
+        PerformStop()
+    elif (command['command'] == "backwards"):
+        PerformContinousMove(direction="BACKWARDS")
 
 
 if __name__ == '__main__':

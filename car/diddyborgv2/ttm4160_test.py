@@ -31,7 +31,7 @@ TB.SetLedShowBattery(False)
 
 # Movement settings (worked out from our DiddyBorg on a smooth surface)
 # Number of seconds needed to move about 1 meter
-timeForward1m = 5.7
+timeForward1m = 2.7
 # Number of seconds needed to make a full left / right spin
 timeSpin360 = 4.8
 # True to run the motion tests, False to run the normal sequence
@@ -51,10 +51,24 @@ else:
 # Function to perform a general movement
 
 
+def PerformStop():
+    TB.MotorsOff()
+
+
+def PerformContinousMove(direction="FORWARDS", angle=0):
+    directionPolarity = 1
+    if (direction == "BACKWARDS"):
+        directionPolarity = -1
+
+    offset = 0.995
+    TB.SetMotor1(directionPolarity * maxPower)
+    TB.SetMotor2(directionPolarity * -(maxPower * offset))
+
+
 def PerformMove(driveLeft, driveRight, numSeconds):
     # Set the motors running
     TB.SetMotor1(driveLeft * maxPower)
-    TB.SetMotor2(driveRight * maxPower)
+    TB.SetMotor2(-(driveRight * maxPower))
     # Wait for the time
     time.sleep(numSeconds)
     # Turn the motors off
@@ -94,7 +108,7 @@ def PerformDrive(meters):
     # Calculate the required time delay
     numSeconds = meters * timeForward1m
     # Perform the motion
-    PerformMove(driveLeft, -driveRight, numSeconds)
+    PerformMove(driveLeft, driveRight, numSeconds)
 
 
 # Run test mode if required
