@@ -32,6 +32,7 @@ function App() {
       <div className="container">
 
         <div className="stream">
+          <LiveStream />
         </div>
 
         <div className="joystick">
