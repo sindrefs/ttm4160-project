@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import RemoteController from './content/RemoteController';
+import LiveStream from './content/LiveStream';
 
 
 
@@ -14,6 +15,7 @@ function App() {
         Hei Petter!
       </p>
       <RemoteController />
+      <LiveStream />
 
     </div >
   );
