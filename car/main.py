@@ -3,6 +3,7 @@ from diddyborgv2.ttm4160_test import PerformContinousMove, PerformStop
 
 
 def handleCommand(command):
+    print(command)
     if command['command']:
         if (command['command'] == "go"):
             print(command)
