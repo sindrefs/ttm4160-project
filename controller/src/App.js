@@ -9,6 +9,16 @@ import LiveStream from './content/LiveStream';
 function App() {
   console.log({ state: "ready" })
 
+  const handleEmergency = () => {
+    console.log("Emergency stop called")
+    fetch("https://rf7lsu4mv5.execute-api.eu-west-1.amazonaws.com/prod/", {
+      method: "POST",
+      body: JSON.stringify({ command: "stop" })
+    })
+      .then(response => console.log(response))
+      .catch(err => console.log(err));
+  }
+
   return (
 
     <div className="app">
@@ -28,6 +38,9 @@ function App() {
         <div className="joystick">
           <RemoteController />
         </div>
+
+        <button onClick={handleEmergency}>EMERGENCY STOP!</button>
+
       </div>
 
 
