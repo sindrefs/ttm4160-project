@@ -3,7 +3,7 @@ import requests
 import base64
 import json
 
-cap = cv2.VideoCapture(2)
+cap = cv2.VideoCapture(0)
 
 while True:
 

@@ -7,6 +7,8 @@ import LiveStream from './content/LiveStream';
 
 
 function App() {
+  console.log({ state: "ready" })
+
   return (
 
     <div className="app">
@@ -22,7 +24,7 @@ function App() {
         <div className="stream">
           <LiveStream />
         </div>
-        
+
         <div className="joystick">
           <RemoteController />
         </div>
