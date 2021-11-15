@@ -38,7 +38,7 @@ class StreamProcessor(threading.Thread):
                             '.jpg', flippedArray, [cv2.IMWRITE_JPEG_QUALITY, jpegQuality])
                         jpg_as_text = base64.b64encode(thisFrame)
                         requests.post("http://ttm41-bfflo-17c606og763lz-1083556350.eu-west-1.elb.amazonaws.com/image/", headers={"content-type": "application/json"},
-                                      data=json.dumps({"image": str(jpg_as_text)[1:-1]}))
+                                      data=json.dumps({"image": str(jpg_as_text)[:-1]}))
                         del flippedArray
                     else:
                         retval, thisFrame = cv2.imencode('.jpg', self.stream.array, [
