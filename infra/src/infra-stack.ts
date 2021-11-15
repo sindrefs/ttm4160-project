@@ -4,6 +4,7 @@ import * as apigateway from "@aws-cdk/aws-apigateway";
 import { NodejsFunction } from "@aws-cdk/aws-lambda-nodejs";
 import * as path from "path";
 import { WebStack } from "../src/web-stack";
+import { EcsStack } from "./ecs-stack";
 
 export class InfraStack extends cdk.Stack {
   constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
@@ -12,6 +13,8 @@ export class InfraStack extends cdk.Stack {
     // The code that defines your stack goes here
 
     const webApp = new WebStack(this, "TTM4160WebStack", {});
+
+    const ecsStack = new EcsStack(this, "TTM4160EcsStack", {});
 
     const handler = new lambda.Function(this, "WidgetHandler", {
       runtime: lambda.Runtime.NODEJS_14_X, // So we can use async in widget.js

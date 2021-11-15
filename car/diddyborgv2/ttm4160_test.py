@@ -74,6 +74,23 @@ def PerformMove(driveLeft, driveRight, numSeconds):
     # Turn the motors off
     TB.MotorsOff()
 
+
+def PerformMoveAngle(driveLeft, driveRight, numSeconds, angle):
+	
+    if angle>0: #turn right
+	TB.SetMotor1(driveLeft * maxPower)
+    	TB.SetMotor2(-(driveRight * maxPower*(1+(angle/10))
+    else if angle <0:
+	TB.SetMotor1(driveLeft * maxPower*(1+(angle/10))
+    	TB.SetMotor2(-(driveRight * maxPower))
+    # Set the motors running
+    #TB.SetMotor1(driveLeft * maxPower)
+    #TB.SetMotor2(-(driveRight * maxPower))
+    # Wait for the time
+    time.sleep(numSeconds)
+    # Turn the motors off
+    TB.MotorsOff()
+
 # Function to spin an angle in degrees
 
 
