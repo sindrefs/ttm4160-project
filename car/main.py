@@ -11,8 +11,10 @@ def handleCommand(command):
         PerformStop()
     elif (command['command'] == "backwards"):
         PerformContinousMove(direction="BACKWARDS")
-    elif (command['command'].joystick):
-        PerformContinousMove(direction="BACKWARDS")
+    elif (command['command'] == "joystick"):
+        joystickvalues = command['joystick']
+        dir = "FORWARDS" if joystickvalues.y > 0 else "BACKWARDS"
+        PerformContinousMove(joystickvalues.x, dir)
 
 
 if __name__ == '__main__':

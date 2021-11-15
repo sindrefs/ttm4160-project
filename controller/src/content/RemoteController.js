@@ -19,7 +19,7 @@ const RemoteController = () => {
     console.log(event)
     fetch("https://rf7lsu4mv5.execute-api.eu-west-1.amazonaws.com/prod/", {
       method: "POST",
-      body: JSON.stringify({ joystick: event })
+      body: JSON.stringify({ joystick: event, command: "joystick" })
     })
   }
 
