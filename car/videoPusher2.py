@@ -94,7 +94,7 @@ global frameRate
 
 imageWidth = 240                        # Width of the captured image in pixels
 imageHeight = 192                       # Height of the captured image in pixels
-frameRate = 10  # Number of images to capture per second
+frameRate = 1  # Number of images to capture per second
 displayRate = 10                        # Number of images to request per second
 photoDirectory = '/home/pi'             # Directory to save photos to
 # Swap between True and False if the camera image is rotated by 180
