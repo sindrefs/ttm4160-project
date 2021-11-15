@@ -18,11 +18,14 @@ function App() {
       </div>
 
       <div className="container">
+
+        <div className="stream">
+          <LiveStream />
+        </div>
+        
         <div className="joystick">
           <RemoteController />
-
         </div>
-        <LiveStream />
       </div>
 
 
