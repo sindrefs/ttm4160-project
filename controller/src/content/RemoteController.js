@@ -25,6 +25,10 @@ const RemoteController = () => {
 
   const handleStop = (event) => {
     console.log(event)
+    fetch("https://rf7lsu4mv5.execute-api.eu-west-1.amazonaws.com/prod/", {
+      method: "POST",
+      body: JSON.stringify({ joystick: event, command: "stop" })
+    })
   }
 
   return (
