@@ -11,7 +11,7 @@ while True:
     image = cv2.resize(image, (320, 240))
     retval, buffer = cv2.imencode('.jpg', image)
     jpg_as_text = base64.b64encode(buffer)
-    result = requests.post("http://localhost:9000/image",
+    result = requests.post("http://ttm41-bfflo-17c606og763lz-1083556350.eu-west-1.elb.amazonaws.com/image/",
                            headers={"content-type": "application/json"},
                            data=json.dumps({"image": str(jpg_as_text)[1:-1]}))
 

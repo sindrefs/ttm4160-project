@@ -11,7 +11,7 @@ const server = http.createServer(app)
 
 const websocketServer = new WebSocket.Server({ server })
 
-const port = 9000
+const port = 80
 
 const send = (msg) => {
     websocketServer.clients.forEach(client => {
@@ -22,6 +22,10 @@ const send = (msg) => {
 app.post("/image", (req, res) => {
     send(req.body)
     res.send({ result: "ok" })
+})
+
+app.get("/health/", (req, res) => {
+    res.send({ status: "Ok" })
 })
 
 server.listen(port, () => {

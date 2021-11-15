@@ -1,10 +1,13 @@
 FROM node
 
+WORKDIR /app
+
 COPY package.json /app/package.json
-COPY package-lock.json /app/package-lock.json
-COPY node_modules/ /app/node_modules/
+
+RUN npm install
+
 COPY server.js /app/server.js
 
-CMD ["node", "app/server.js"]
+CMD ["node", "server.js"]
 
 EXPOSE 9000
