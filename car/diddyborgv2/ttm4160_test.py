@@ -67,7 +67,9 @@ def PerformContinousMove(direction="FORWARDS", angle=0):
     else if angle <0:
         TB.SetMotor1(directionPolarity * maxPower * (1+(angle/10))
         TB.SetMotor2(directionPolarity * -(maxPower * offset))
-
+    else:
+	TB.SetMotor1(directionPolarity * maxPower)
+        TB.SetMotor2(directionPolarity * -(maxPower * offset))
 
 def PerformMove(driveLeft, driveRight, numSeconds):
     # Set the motors running
